@@ -54,6 +54,97 @@ The authenticity of host 'lime2 (192.168.2.xxx)' can't be established.
 ECDSA key fingerprint is SHA256:......................................
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 <= yes<Return>
+root@lime2's password:
+<= 1234<Return>
 ```
+## Das erste Login
+Während des ersten Logins erfolgt die Konfiguration des Systems. Es ist zu empfehlen für Passwörter, Benutzer und Rechnernamen Zeichen zu verwenden, die sich auf der deutschen und englischen Tastatur an der gleichen Stelle befinden: y,z,ä,ö,ü,.. sowie Leerzeichen sollten vermieden werden. 
+Für die Illustration benutzen wir beispielhafte Wörter, welche durch selber gewählte Wörter zu ERSETZEN und zu notieren sind.
+* Es wird ein neues Root Passwort 'rootpw' (ERSETZEN) für den Super User vergeben.
+* Ein neuer Benutzer mit dem Namen 'username' (ERSETZEN) wird angelegt.
+* Für diesen Benutzer wird ein Passwort 'userpw' (ERSETZEN) vergeben.
+* Dem Benutzer kann ein wahrer Name 'realname' (ERSETZEN) gegeben werden. Der Inhalt ist nicht von Belang.
+```
+Welcome to Armbian-unofficial! 
+Documentation: https://docs.armbian.com/ | Community support: https://community.armbian.com/
+IP address: 192.168.2.xxx
 
+Create root password: 
+<= rootpw<Enter>
+Repeat root password:
+<= rootpw<Enter>
 
+Support status: community support (looking for a dedicated maintainer)
+Shell: BASH
+
+Creating a new user account. Press <Ctrl-C> to abort
+Please provide a username (eg. your first name): 
+<= username<Enter>
+Create user (username) password:
+<= userpw<Enter>
+Repeat user (username) password:
+<= userpw<Enter>
+Please provide your real name:
+<= realname<Enter>
+Dear ..., your account ... has been created and is sudo enabled.
+Please use this account for your daily work from now on.
+
+Detected timezone: Europe/Berlin
+Set user language based on your location? [Y/n] 
+<= <Enter>
+ At your location, more locales are possible:
+1) de_DE.UTF-8  ...	
+Please enter your choice: 
+<= 1<Enter>
+Generating locales: de_DE.UTF-8
+root@lime2:~# 
+```
+Kongratulation, nun befinden wir uns in der Shell des root Nutzers,
+dargestellt durch den '#' Prompt.
+Wir ändern den Rechnernamen von 'lime2' auf einen neuen,
+hier als Beispiel 'olinu' (ERSETZEN)
+```
+# hostnamectl set-hostname olinu
+```
+Sofern ein SATA Laufwerk vorhanden ist können wir es als
+Systemlaufwerk verwenden:
+```
+# armbian-install
+1 - Boot from SD - system on SATA, USB or NVMe
+5 - Install/Update the Bootloader on SD/eMMC
+
+<= 1 <Ok> <Return>
+
+Destination sda has 476GB of available space.       
+Automated install will generate needed partition(s)!                           
+<= <Proceed> <Return> 
+Select the destination:
+1 /dev/sda1
+<= <Ok> <Return>
+This Script will erase your device /dev/sda1. Continue?
+<= <Yes> <Return>
+Select Filesystem type for /dev/sda1
+1 ext4
+2 btrfs
+<= 1 <Ok> <Return>
+Formatting /dev/sda1 for ext4
+Transferring rootfs to /dev/sda1
+All done. Reboot
+<= <Reboot> <Return>
+Connection to ... closed
+```
+Nun werden wir uns erneut einloggen,
+Das Reboot hat dazu geführt, das der Rechner nun unter seinem
+neuen Namen erreichbar sein sollte. Deswegen muss die Verbindung 
+erneut bestätigt werden. 
+Wir können den Benutzernamen (username) weglassen, wenn er 
+identisch mit dem der aufrufenden Shell ist.
+```
+$ ssh username@olinu 
+The authenticity of host 'olinu (192.168.2.126)' can't be established.
+ECDSA key fingerprint is SHA256:.....................................
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+<= yes<Return>
+username@olinu's password:
+<= userpw<Return>
+```
