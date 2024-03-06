@@ -1,7 +1,5 @@
 # TokTok auf dem OlinuXino
 
-Das TokTok Netzwerk ist ein Peer to Peer (gleicher unter gleichen) Netzwerk welches das Internet als Medium für den Informationsaustausch benutzt. Dabei müssen die beteiligten Rechner (Nodes) nicht über eine öffentliche IP Adresse erreichbar sein. Die Verwaltung der Verbindungsinformationen erfolgt verteilt im Netz, ohne das Administrative Handlungen auszuführen sind.
-=> https://toktok.ltd TokTok
 Es soll hier die Installation und Benutzung auf einem embedded Linux Rechner dargelegt werden. Der Grund das System auf einem solchem Rechner zu installieren ist, daß um zu jedem Zeitpunkt Nachrichten empfangen zu können der empfangende Rechner ständig erreichbar sein sollte.
 ## Die Hardware und das Betriebssystem
 Prinzipiell eignet sich sicher jeder embedded Linux Rechner welcher eine Verbindung mit dem Internet herstellen kann. Wir haben uns für den ARM Server A20-OlinuXino-LIME2 der Firma Olimex enschieden. Dieser kann mit oder ohne Festplatte betrieben werden.

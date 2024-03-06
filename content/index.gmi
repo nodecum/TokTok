@@ -1,0 +1,10 @@
+# nodecum >o) - collaboratively joined 
+
+This site deals with solutions for independent user communication. This means that the users play their part in making the system work. 
+
+=> toktok/index.gmi the TokTok network 
+
+'nodecum' means 'with (cum) node' and the logo symbolizes a receiving and sending node: >o) ,the building block from which peer to peer networks 
+are created. When it is turned, a person appears who receives and is connected.
+
+=> index.de.gmi the Site in German Language

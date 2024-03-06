@@ -1,0 +1,9 @@
+# The TokTok / Tox network
+
+The TokTok network is a peer-to-peer network that uses the Internet as a medium for exchanging information. The participating computers (nodes) do not have to be accessible via a public IP address. The administration of the connection information is distributed in the network without the need for administrative actions. The protocol is called Tox and is described on the following page:
+
+=> https://toktok.ltd TokTok
+
+It is currently not possible to receive messages for unreachable nodes. Therefore, for practical applicability, it makes sense that at least one participant in the communication is always reachable. We show how this is possible with the help of an embedded Linux server.
+
+=> server.de.gmi TokTok on the Olinuxino (in German Language)
