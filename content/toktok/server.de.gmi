@@ -1,10 +1,12 @@
 # TokTok auf dem OlinuXino
 
 Es soll hier die Installation und Benutzung auf einem embedded Linux Rechner dargelegt werden. Der Grund das System auf einem solchem Rechner zu installieren ist, daß um zu jedem Zeitpunkt Nachrichten empfangen zu können der empfangende Rechner ständig erreichbar sein sollte.
+
 ## Die Hardware und das Betriebssystem
 Prinzipiell eignet sich sicher jeder embedded Linux Rechner welcher eine Verbindung mit dem Internet herstellen kann. Wir haben uns für den ARM Server A20-OlinuXino-LIME2 der Firma Olimex enschieden. Dieser kann mit oder ohne Festplatte betrieben werden.
 => https://olimex.com Olimex
 => https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-LIME2/open-source-hardware A20-OLinuXino-LIME2 
+
 ### Das Abbild des Betriebsystems erzeugen
 Wir nutzen die Version Jammy der Armbian Linux Distribution. Dies ist eine für ARM Boards angepasste Version von Ubuntu 22.04. Sie muß aber für unser konkretes Board A20-OLinuXino-LIME2 gebaut werden. Die Anleitung dazu findet sich unter Building Armbian. 
 => https://armbian.com Armbian
@@ -34,10 +36,13 @@ Wir stellen einen Link zu dem erzeugtem Abbild, der SHA Prüfsumme und Inhaltsan
 => armbian/Armbian-unofficial_24.2.0-trunk_Lime2_jammy_current_6.6.11_minimal.img.xz img.xz
 => armbian/Armbian-unofficial_24.2.0-trunk_Lime2_jammy_current_6.6.11_minimal.img.sha sha 
 => armbian/Armbian-unofficial_24.2.0-trunk_Lime2_jammy_current_6.6.11_minimal.img.txt txt
+
 ### Micro-SD Karte beschreiben 
 Das Abbild des Betriebssystems kann mit dem Programm Balena Etcherd auf die Micro-SD Karte geschrieben und überprüft werden.
 => https://etcher.balena.io Balena Etcher
+
 ## Das Betriebssystem einrichten
+
 ### Verbindung über das Netzwerk
 Der voreingestellte Name des Servers ist lime2. Sollten mehrere Rechner mit diesem Namen im LAN Netz verbunden sein, so könnte man mit dem Befehl
 ```
@@ -55,6 +60,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 root@lime2's password:
 <= 1234<Return>
 ```
+
 ## Das erste Login
 Während des ersten Logins erfolgt die Konfiguration des Systems. Es ist zu empfehlen für Passwörter, Benutzer und Rechnernamen Zeichen zu verwenden, die sich auf der deutschen und englischen Tastatur an der gleichen Stelle befinden: y,z,ä,ö,ü,.. sowie Leerzeichen sollten vermieden werden. 
 Für die Illustration benutzen wir beispielhafte Wörter, welche durch selber gewählte Wörter zu ERSETZEN und zu notieren sind.
