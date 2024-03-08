@@ -108,12 +108,12 @@ dargestellt durch den '#' Prompt.
 Wir ändern den Rechnernamen von 'lime2' auf einen neuen,
 hier als Beispiel 'mex' (ERSETZEN)
 ```
-# hostnamectl set-hostname mex
+ # hostnamectl set-hostname mex
 ```
 Sofern ein SATA Laufwerk vorhanden ist können wir es als
 Systemlaufwerk verwenden:
 ```
-# armbian-install
+ # armbian-install
 1 - Boot from SD - system on SATA, USB or NVMe
 5 - Install/Update the Bootloader on SD/eMMC
 
