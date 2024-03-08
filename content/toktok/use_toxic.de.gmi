@@ -1,0 +1,51 @@
+# Toxic benutzen
+
+Wir möchten, daß unser Messenger weiter arbeitet, auch wenn wir die Verbindung zu unserem Server unterbrechen. Da normalerweise alle Programme welche innerhalb einer ssh shell laufen bei der Unterbrechung der Verbindung beendet werden benutzen wir den Terminalmultiplexer 'tmux' um den Toxic Messenger lebendig zu erhalten: 
+```
+$ cd
+oli@mex:~$ tmux 
+```
+Nun sind wir in einer 'tmux' Session die uns erlauben wird die
+Verbindung zu 'susi' zu unterbrechen und dabei alle laufenden 
+Programme lebendig zu behalten, sodaß wir zu einem späteren 
+Zeitpunkt jederzeit wieder anknüpfen können. In dieser Session
+starten wir 'toxic':
+```
+oli@mex:~$ toxic
+Creating new data file. Would you like to encrypt it? Y/n (q to quit) 
+<= n<Enter> 
+```
+Hier die wichtigsten Befehle im Überblick
+
+* /help             : gibt Hilfe für die Veschiedenen Befehle
+* /quit             : toxic verlassen 
+* /myid             : Ausgabe meiner Adresse
+* /nick <name>      : Mein Name unter dem ich den Anderen erscheine
+* /add <addr> <msg> : Ein Kontaktgesuch mit optionaler Notiz senden
+* /accept <id>      : Ein Kontaktgesuch gewähren
+
+und ein paar Navigationstasten
+
+* <Ctrl+O>, <Ctrl+P>     : Durch die Karteikarten navigieren
+* <Page Up>, <Page Down> : Durch die Geschichte gehen
+
+## Beenden der Verbindung
+
+Wir wollen 'toxic' verlassen ohne ihn zu beenden.
+Würden wir ihn mit '/quit' verlassen, dann würden
+wir alle Nachrichten verpassen, somit wäre die Benutzung
+des Servers etwas sinnlos.
+
+Deshalb benutzen wir die 'tmux' Tasten '<Ctrl+B> D' für Detach (Abkoppeln).
+Ein weiteres '<Ctrl+D>' wird die ssh Verbindung unterbrechen.
+
+## Wiederaufnehmen der Verbindung
+
+```
+oli@pc:~$ ssh oli@mex
+oli@mex:~$ tmux attach
+```
+Jetzt sollte magisch unser laufender 'toxic' erscheinen und uns
+mit schönen neuen Nachrichten erfreuen.
+
+Viel Spaß beim TokTok anklopfen! 

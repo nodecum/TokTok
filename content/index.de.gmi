@@ -4,6 +4,10 @@ Diese Seite beschäftigt sich mit Lösungen für eine eigenständige Kommunikati
 
 => toktok/index.de.gmi das TokTok Netzwerk 
 
+Für den ungeübten Anwender mag die Benutzung des Computers über Text Ein- und Ausgabe ungewohnt sein. Jedoch ermöglicht uns gerade diese einfache Schnittstelle das Potential des Computers in kreativer Weise zu nutzen. Da dies die Grundlage für die Administration und Benutzung eines Unix Systems ist, gibt es ein paar einführende Hinweise:
+
+=> unix/index.de.gmi Unix Grundlagen
+
 'nodecum' bedeutet 'mit (cum) Knoten (Node)' und das Logo symbolisert
 einen empfangenden und sendenden Knoten: >o) ,der Baustein aus dem das
 Netz entsteht. Wird er gedreht erscheint der Mensch welcher empfängt 

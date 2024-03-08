@@ -1,0 +1,21 @@
+# Unix Grundlagen
+
+Nachschlagewerke für den Einstieg:
+
+=> http://grund-wissen.de/linux/index.html Grundkurs Linux von Bernhard Grotz
+=> GrundkursLinux.pdf Grundkurs Linux (pdf)
+=> https://wiki.ubuntuusers.de Ubuntu Wiki
+
+Womit sollte man sich vertraut machen?
+
+* Die Verzeichnisstruktur
+* Das Terminal, die Shell 
+* einige grundlegende Befehle zur Dateibearbeitung
+* ssh Verbindung zwischen Computern
+* git Repositories
+
+=> https://wiki.ubuntuusers.de/Shell/Einf%C3%BChrung/ Shell Einführung
+
+Für Windows Benutzer empfiehlt sich die Installation von 'Windows Terminal' gegenüber der spartanischen Windows Konsole:
+
+=> https://apps.microsoft.com/detail/9n0dx20hk701?rtc=1&hl=de-de&gl=DE Windows Terminal

@@ -28,7 +28,7 @@ $ cd build
 $ ./compile.sh BOARD=lime2 BRANCH=current RELEASE=jammy
 ```
 Das sollte unser gewünschtes Betriebssystem-Abbild erzeugen,
-welches wir dann mittels `scp` auf unseren realen Rechner kopieren:
+welches wir dann mittels 'scp' auf unseren realen Rechner kopieren:
 ```
 Armbian-unofficial_24.2.0-trunk_Lime2_jammy_current_6.6.11_minimal.img
 ```
@@ -48,7 +48,7 @@ Der voreingestellte Name des Servers ist lime2. Sollten mehrere Rechner mit dies
 ```
 $ sudo nmap -sP 192.168.2.0/24
 ```
-alle erreichbaren Rechner und ihre Adressen herausfinden. In unserem Fall hat das LAN Netz die Adresse `192.168.2.XXX`.
+alle erreichbaren Rechner und ihre Adressen herausfinden. In unserem Fall hat das LAN Netz die Adresse '192.168.2.XXX'.
 
 Nun benutzen wir die herausgefundene Adresse und loggen uns auf dem Rechner lime2 oder 192.168.2.xxx als Nutzer root mit dem Passwort 1234 ein:
 ```
@@ -65,8 +65,8 @@ root@lime2's password:
 Während des ersten Logins erfolgt die Konfiguration des Systems. Es ist zu empfehlen für Passwörter, Benutzer und Rechnernamen Zeichen zu verwenden, die sich auf der deutschen und englischen Tastatur an der gleichen Stelle befinden: y,z,ä,ö,ü,.. sowie Leerzeichen sollten vermieden werden. 
 Für die Illustration benutzen wir beispielhafte Wörter, welche durch selber gewählte Wörter zu ERSETZEN und zu notieren sind.
 * Es wird ein neues Root Passwort 'rootpw' (ERSETZEN) für den Super User vergeben.
-* Ein neuer Benutzer mit dem Namen 'username' (ERSETZEN) wird angelegt.
-* Für diesen Benutzer wird ein Passwort 'userpw' (ERSETZEN) vergeben.
+* Ein neuer Benutzer mit dem Namen 'oli' (ERSETZEN) wird angelegt.
+* Für diesen Benutzer wird ein Passwort 'olipw' (ERSETZEN) vergeben.
 * Dem Benutzer kann ein wahrer Name 'realname' (ERSETZEN) gegeben werden. Der Inhalt ist nicht von Belang.
 ```
 Welcome to Armbian-unofficial! 
@@ -83,11 +83,11 @@ Shell: BASH
 
 Creating a new user account. Press <Ctrl-C> to abort
 Please provide a username (eg. your first name): 
-<= username<Enter>
-Create user (username) password:
-<= userpw<Enter>
-Repeat user (username) password:
-<= userpw<Enter>
+<= oli<Enter>
+Create user (oli) password:
+<= olipw<Enter>
+Repeat user (oli) password:
+<= olipw<Enter>
 Please provide your real name:
 <= realname<Enter>
 Dear ..., your account ... has been created and is sudo enabled.
@@ -106,9 +106,9 @@ root@lime2:~#
 Kongratulation, nun befinden wir uns in der Shell des root Nutzers,
 dargestellt durch den '#' Prompt.
 Wir ändern den Rechnernamen von 'lime2' auf einen neuen,
-hier als Beispiel 'olinu' (ERSETZEN)
+hier als Beispiel 'mex' (ERSETZEN)
 ```
-# hostnamectl set-hostname olinu
+# hostnamectl set-hostname mex
 ```
 Sofern ein SATA Laufwerk vorhanden ist können wir es als
 Systemlaufwerk verwenden:
@@ -141,14 +141,82 @@ Nun werden wir uns erneut einloggen,
 Das Reboot hat dazu geführt, das der Rechner nun unter seinem
 neuen Namen erreichbar sein sollte. Deswegen muss die Verbindung 
 erneut bestätigt werden. 
-Wir können den Benutzernamen (username) weglassen, wenn er 
+Wir können den Benutzernamen (oli) weglassen, wenn er 
 identisch mit dem der aufrufenden Shell ist.
 ```
-$ ssh username@olinu 
-The authenticity of host 'olinu (192.168.2.126)' can't be established.
+$ ssh oli@mex 
+The authenticity of host 'mex (192.168.2.126)' can't be established.
 ECDSA key fingerprint is SHA256:.....................................
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 <= yes<Return>
-username@olinu's password:
-<= userpw<Return>
+oli@mex's password:
+<= olipw<Return>
+```
+
+Nun werden wir mit einem schönem Login Bildschirm begrüßt:
+```
+    _    ____   ___     ___  _     _            __  ___               _     _ 
+   / \  |___ \ / _ \   / _ \| |   (_)_ __  _   _\ \/ (_)_ __   ___   | |   (_)
+  / _ \   __) | | | | | | | | |   | | '_ \| | | |\  /| | '_ \ / _ \  | |   | |
+ / ___ \ / __/| |_| | | |_| | |___| | | | | |_| |/  \| | | | | (_) | | |___| |
+/_/   \_\_____|\___/   \___/|_____|_|_| |_|\__,_/_/\_\_|_| |_|\___/  |_____|_|
+                                                                              
+                  ____                                                        
+ _ __ ___   ___  |___ \                                                       
+| '_ ` _ \ / _ \   __) |                                                      
+| | | | | |  __/  / __/                                                       
+|_| |_| |_|\___| |_____|                                                      
+                                                                              
+Welcome to Armbian-unofficial 24.2.0-trunk Jammy with Linux 6.6.11-current-sunxi
+
+No end-user support: built from trunk
+
+System load:   48%           	Up time:       44 min	
+Memory usage:  6% of 997M   	IP:	       192.168.2.xxx
+CPU temp:      37°C           Usage of /:    1% of 469G   	
+
+[ Menu-driven system configuration (beta): sudo apt update && sudo apt install armbian-config ]
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+oli@mex:~$
+```
+
+## Den ssh Zugang einrichten 
+Wir haben den Befehl 'ssh' (secure shell, sichere Oberfläche) benutzt um uns mit unserem Olinuxino zu verbinden. Um zu vermeiden, jedes mal das Passwort eingeben zu müssen, werden wir dies jetzt etwas konfigurieren.
+
+Um mit den verschiedenen Rechnern nicht durcheinanderzukommen benutzen wir die gängigen Bezeichnungen. Der Rechner von dem aus der Verbindungsaufbau erfolgt (meist ist das der, auf welchem wir tippen und in den Bildschirm schauen) wird als 'local host' (der nahe Wirt) und der, zu welchem die Verbindung hin erfolgt als 'remote host' (der ferne Wirt) bezeichnet, wobei 'host' als Synonym zu Rechner, welcher unser Anliegen freundlich aufnimmt zu sehen ist.
+
+Für unser Beispiel nehmen wir an, daß der Benutzer auf beiden Hosts 'oli' ist und der lokale Host 'pc' und der entfernte Host 'mex' ist. Der Prompt sieht dann jeweils so aus: 'oli@pc' und 'oli@mex'.
+
+Auf dem lokalen Host 'pc' stellen wir fest, ob bereits eine ssh identity existiert:
+```
+oli@pc:~$ ls -la ~/.ssh/id_rsa.pub
+```
+Existiert diese Datei nicht, dann erzeugen wir sie mit dem Befehl 'ssh-keygen',dabei benötigen wir keine Passphrase und akzeptieren die angegebenen Einstellungen:
+```
+oli@mex:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/oli/.ssh/id_rsa): <Return> 
+Created directory '/home/oli/.ssh'.
+Enter passphrase (empty for no passphrase): <Return>
+Enter same passphrase again: <Return>
+Your identification has been saved in /home/oli/.ssh/id_rsa
+Your public key has been saved in /home/oli/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:..........................................   oli@pc
+```
+Auf dem remote host führen wir den gleichen Befehl 'ssh-keygen' aus, wir benötigen diese Identität zwar jetzt nicht, es wird uns aber das '.ssh' Verzeichniss erzeugt und mit sinnvollen Zugriffsrechten ausgestattet.
+```
+oli@mex:~$ ssh-keygen
+```
+Jetzt kopieren wir den öffentlichen Schlüssel vom lokalen host 'pc' zum entfernten host 'mex' mit Hilfe des 'scp' (secure copy) Befehls in die Datei '~/.ssh/authorized_keys', also der Schlüsselbund für die autorisierten Schlüssel.
+Da die Datei noch nicht existiert geht das so einfach, sonst sollte man neue Schlüssel in die bereits existierende Datei hinzufügen.
+Wir müssen noch ein (letztes) mal 'oli@mex' sein Passwort benutzen.  
+```
+oli@pc:~$ scp ~/.ssh/id_rsa.pub oli@mex:.ssh/authorized_keys
+oli@mex's password: 
+<= olipw<Return>
+id_rsa.pub                                        100%  566 
 ```

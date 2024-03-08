@@ -1,0 +1,74 @@
+# Anwendungsprogramme installieren
+
+Wir müssen unser Installationssystem, den 'apt' Paketmanager mit 'update' auf den neusten Stand bringen und aktualisieren bereit vorhandene Pakete mit 'upgrade':
+```
+$ sudo apt update
+$ sudo apt -y upgrade
+```
+Um etwas Ordnung zu behalten bauen wir die Programme im Verzeichniss
+'~/prog', diese erzeugen wir so:
+```
+$ mkdir ~/prog
+```
+
+## Die c-toxcore library bauen
+
+Zunächst benötigen wir einige Programme und Bibliotheken.
+```
+$ sudo apt -y install git clang cmake make
+$ sudo apt -y install libsodium-dev libopus-dev libvpx-dev libconfig-dev
+```
+
+Dann wird das c-toxcore Repository geholt:
+```
+~$ cd prog
+~/prog$ git clone --recurse-submodules https://github.com/TokTok/c-toxcore.git
+~/prog$ cd c-toxcore
+```
+
+Wir haben nun den neuesten Stand (head revision) des Quellcodes der 'c-toxcore' Bibliothek erhalten. Wir wollen aber einen bestimmten Stand benutzen von dem wir wissen, daß er zusammen mit toxic funktioniert:
+```
+$ git checkout 5bdaaaed
+```
+
+Jetzt wird die Bibliothek gebaut und installiert:
+```
+~/prog/c-toxcore$ cd build
+~/prog/c-toxcore/build$ cmake ..
+~/prog/c-toxcore/build$ make 
+~/prog/c-toxcore/build$ sudo make install
+```
+
+## Den 'toxic' Messenger bauen
+
+Zunächst werden wieder einige Abhängigkeiten installiert.
+
+```
+$ sudo apt -y install libncursesw5-dev libcurl4-openssl-dev asciidoc
+```
+
+Dann das Repository holen und in das Verzeichnis wechseln:
+```
+$ cd ~/prog
+~/prog$ 
+~/prog$ git clone https://github.com/JFreegman/toxic.git
+~/prog$ cd toxic
+```
+
+Wir benutzen wieder eine bestimmte Version von der wir wissen, daß sie funktioniert:
+```
+git checkout 5ad00f7
+```
+
+Dann wird gebaut und installiert:
+```
+~/prog/toxic$ make
+~/prog/toxic$ sudo make install
+~/prog/toxic$ sudo ldconfig
+```
+
+## Den Terminal Multiplexer 'tmux' installieren
+```
+$ sudo apt -y install tmux
+```
+
