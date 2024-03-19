@@ -6,4 +6,7 @@ The TokTok network is a peer-to-peer network that uses the Internet as a medium 
 
 It is currently not possible to receive messages for unreachable nodes. Therefore, for practical applicability, it makes sense that at least one participant in the communication is always reachable. We show how this is possible with the help of an embedded Linux server.
 
-=> server.de.gmi TokTok on the Olinuxino (in German Language)
+=> server.de.gmi Setup the Olinuxino Server (in German Language)
+=> app_install.de.gmi Install the Application (in German Language)
+=> use_toxic.de.gmi Using Toxic (in German Language)
+
