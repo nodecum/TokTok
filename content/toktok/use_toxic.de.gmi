@@ -6,8 +6,8 @@ $ cd
 oli@mex:~$ tmux 
 ```
 Nun sind wir in einer 'tmux' Session die uns erlauben wird die
-Verbindung zu 'susi' zu unterbrechen und dabei alle laufenden 
-Programme lebendig zu behalten, sodaß wir zu einem späteren 
+Verbindung zu 'mex' zu unterbrechen und dabei alle laufenden 
+Programme lebendig zu behalten, so daß wir zu einem späteren 
 Zeitpunkt jederzeit wieder anknüpfen können. In dieser Session
 starten wir 'toxic':
 ```
