@@ -220,3 +220,13 @@ oli@mex's password:
 <= olipw<Return>
 id_rsa.pub                                        100%  566 
 ```
+
+## Benutzung eines Monitors über HDMI und USB Tastatur
+Um den HDMI Treiber zu laden muss der Bildschirm angeschlossen sein und dann der Rechner gebootet oder rebootet werden. Um den verwendeten Zeichensatz für die Konsole festzulegen kann man 'console-setup' benutzen:
+```
+$ sudo dpkg-reconfigure console-setup 
+```
+Um das Tastaturlayout zu ändern:
+```
+$ sudo dpkg-reconfigure keyboard-configuration 
+```
