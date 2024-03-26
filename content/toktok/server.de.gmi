@@ -230,3 +230,4 @@ Um das Tastaturlayout zu ändern:
 ```
 $ sudo dpkg-reconfigure keyboard-configuration 
 ```
+=> https://docs.armbian.com/User-Guide_Fine-Tuning/ Armbian Fine-Tuning
