@@ -1,5 +1,7 @@
 # Unix Grundlagen
 
+=> shell.de.gmi Die Shell und Darstellungshinweise
+
 Nachschlagewerke für den Einstieg:
 
 => http://grund-wissen.de/linux/index.html Grundkurs Linux von Bernhard Grotz

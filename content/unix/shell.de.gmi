@@ -1,0 +1,51 @@
+#Die Shell
+
+Die Shell (engl. für Schale, Hülle) ist eine textbasierte Schnittstelle um mit dem Betriebssystem zu kommunizieren. Es werden Anweisungen an den Computer eingegeben und die Ergebnisse werden ausgegeben. Dieses Vorgehen erlaubt eine sehr flexieble Verkettung von Anweisungen, so daß komplexe Anweisungen aus mehreren kleineren Stückchen zusammengesetzt werden und damit auch kleine Programme erstellt werden können. Die Grenze zwischen Anwender und Programmierer kann hier nicht so strikt gezogen werden und das ist gewollt so.
+Zeichen werden gewöhnlicherweise über eine Tastatur eingegeben und erscheinen als Ausgabe auf einem Bildschirm. Das Programm,oder früher war es ein Gerät, welches diese Ein- und Ausgabe ermöglicht wird als Terminal oder Konsole bezeichnet. Das Terminal schafft uns den Zugang zu einer Shell in deren Kontext dann weitere Programme laufen können welche uns zum Beispiel den Zugang zu einer Shell welche auf einem anderen Rechner läuft erlauben. Deshalb ist es von Bedeutung das wir wissen als wer wir uns wo befinden, wenn wir mit einer Shell arbeiten.
+Das geschieht über den Prompt, das ist die Eingabeaufforderung in der Form:
+```
+user@computer:verzeichnis$
+```
+* user: der Name des Benutzers
+* computer: der Name des Computers
+* verzeichniss: das Aktuelle Verzeichnis
+
+Das '$' Zeichen ist der sogenannte Prompt und signalisiert das der Computer bereit ist um Eingaben von der Tastatur zu empfangen.Dahinter kann also der Befehl eingetippt werden welchen man mit der <Enter> Taste zur Ausfühgrung übergibt. Konkret könnte das also für den Benutzer 'paul' auf dem Rechner 'otto' so aussehen:
+```
+paul@otto:~$ 
+```    
+Die Tilde '~' bezeichnet das Haus (home) Verzeichnis des Benutzers, das wird in unserem Fall das Verzeichnis '/home/paul' sein. Unter diesem Verzeichnis liegen die privaten Daten des Benutzers.
+Wenn für das Verständnis der Benutzer-/Computername sowie das Verzeichnis von Bedeutung ist, dann lassen wir es in der Darstellung weg.
+Spezielle Tasten stellen wir in spitzen Klammern dar, zB bedeutet <Ctrl+D> das die Control Taste zu betätigen ist und dann gleichzeitig die Taste 'D'. Soll an anderer Stelle als dem Prompt ('$') eine Eingabe oder Auswahl erfolgen, dann heben wir das mit der Zeichenfolge '<= ' am Anfang der Zeile hervor. Dabei ist das '<= ' nicht mit einzugeben, sondern was danach folgt! 
+Angenommen Benutzer 'paul' möchte sein Passwort von 'hallo' auf 'ichbins' ändern, dann können wir das wie folgt beschreiben:
+```
+$ passwd
+Ändern des Passworts für paul.
+Geben Sie das aktuelle Passwort ein: 
+<= hallo<Enter>
+Geben Sie ein neues Passwort ein: 
+<= ichbins<Enter>
+Geben Sie das neue Passwort erneut ein:
+<= ichbins<Enter>
+```
+
+##Vervollständigung
+Oft kann man sich viel Tipperei und Tippfehler ersparen wenn man die Tabulator Taste <Tab> benutzt und den Computer um Vervollständigung bittet.Das funktioniert sowohl für Befehle, Argumente als auch für Verzeichnisse, so diese schon existieren. Als Beispiel schauen wir uns an wie man den Aufruf für den Status des Netzwerk Managers vereinfachen könnte:
+```
+$ sudo syst
+<= <Tab>
+$ sudo system
+<= c<Tab>
+$ sudo sytemctl
+<= <Space>stat<Tab>
+$ sudo systemctl status
+<= N<Tab>
+$ sudo systemctl status NetworkManager
+<= <Enter>
+...
+<= q	
+```
+Auf diese Weise kann man auch oft mögliche Argumente von Befehlen erfragen.
+
+##Geschichte
+Mit den Cursor Tasten <Up> und <Down> kann man in die Geschichte der eingegebenen Befehle einsehen, diese wiederholt ausführen oder aber auch mit den <Left>, <Right> und <Del> Tasten bearbeiten. Das kann extrem viel Tipperei sparen.
