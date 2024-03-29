@@ -49,3 +49,6 @@ Auf diese Weise kann man auch oft mögliche Argumente von Befehlen erfragen.
 
 ##Geschichte
 Mit den Cursor Tasten <Up> und <Down> kann man in die Geschichte der eingegebenen Befehle einsehen, diese wiederholt ausführen oder aber auch mit den <Left>, <Right> und <Del> Tasten bearbeiten. Das kann extrem viel Tipperei sparen.
+
+##Platzhalter
+Zum Vereinfachten Auswählen von Dateien verwendet man das Platzhalterzeichen '*'.
